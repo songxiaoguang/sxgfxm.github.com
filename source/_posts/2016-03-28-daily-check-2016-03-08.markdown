@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Daily Check - 2016-03-28"
+date: 2016-03-28 20:53:31 +0800
+comments: true
+categories: Daily Check
+tags: 
+keywords: 
+---
+
+###Achievements  
+1. 成功搭建Github Blog；  
+2. 完成了Octopress关于基本操作的总结；
+3. 学习了Markdown标记语言的基本语法。
+
+###Plans
+1. 逐步总结发布Objective-C有关内容；
+2. 查找基于Objective-C的神经网络框架；
+3. 学习Octopress关于修改主题和结构的知识。
