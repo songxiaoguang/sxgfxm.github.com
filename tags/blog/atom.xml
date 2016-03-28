@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Light's Blog]]></title>
-  <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Tag: Blog | Light's Blog]]></title>
+  <link href="http://sxgfxm.github.io/tags/blog/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
   <updated>2016-03-28T14:46:09+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
