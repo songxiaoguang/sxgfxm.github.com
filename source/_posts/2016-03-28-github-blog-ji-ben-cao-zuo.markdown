@@ -19,7 +19,7 @@ keywords: Octopress
 自动生成/public目录下的展示页面。
 
 `rake preview`<br>
-本地预览，地址为loccalhost:4000,`ctrl+C`终止预览。
+本地预览，地址为[http://localhost:4000](http://localhost:4000 "本地预览")，`ctrl+C`终止预览。
 
 `rake deploy`<br>
 
