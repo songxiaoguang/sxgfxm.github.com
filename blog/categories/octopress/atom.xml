@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Light's Blog]]></title>
-  <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Octopress | Light's Blog]]></title>
+  <link href="http://sxgfxm.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
   <updated>2016-03-28T19:56:44+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
@@ -57,25 +57,6 @@
 <p>1、教程中访问ruby网站采用的淘宝镜像<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a> 无法访问，需要采用<a href="https://ruby.taobao.org/">https://ruby.taobao.org/</a> 替代。</p>
 
 <p>2、教程中导入插件后提示<em>“Build Warning: Layout &lsquo;nil&rsquo; requested in atom.xml does not exist.”</em>错误，需要将导入的xml文件中<code>layout = nil</code> 替换为 <code>layout = null</code>。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello Github Blog]]></title>
-    <link href="http://sxgfxm.github.io/blog/2016/03/28/hello-github-blog/"/>
-    <updated>2016-03-28T11:43:54+08:00</updated>
-    <id>http://sxgfxm.github.io/blog/2016/03/28/hello-github-blog</id>
-    <content type="html"><![CDATA[<p><strong>Hello world !</strong></p>
-
-<p><strong>以此纪念独立搭建的Github Blog。</strong></p>
-
-<p><strong>感谢Github Pages免费空间，感谢Octopress静态化博客系统。</strong></p>
-
-<p><strong>感谢带我入门的Web前端工程师bounlusin（博客：<a href="http://bounlusin.github.io/" title="bounlusin">http://bounlusin.github.io/</a>）</strong></p>
-
-<p><strong>感谢极客学院建立Github Blog教程 <a href="http://wiki.jikexueyuan.com/project/github-page/" title="像geek一样写博客">http://wiki.jikexueyuan.com/project/github-page/</a></strong></p>
-
-<p><strong>If you really want it , just make everyday count !</strong></p>
 ]]></content>
   </entry>
   
