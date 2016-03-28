@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-03-28T20:48:42+08:00</updated>
+  <updated>2016-03-28T21:04:35+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -12,6 +12,31 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Daily Check - 2016-03-28]]></title>
+    <link href="http://sxgfxm.github.io/blog/2016/03/28/daily-check-2016-03-08/"/>
+    <updated>2016-03-28T20:53:31+08:00</updated>
+    <id>http://sxgfxm.github.io/blog/2016/03/28/daily-check-2016-03-08</id>
+    <content type="html"><![CDATA[<h3>Achievements</h3>
+
+<ol>
+<li>成功搭建Github Blog；</li>
+<li>完成了Octopress关于基本操作的总结；</li>
+<li>学习了Markdown标记语言的基本语法。</li>
+</ol>
+
+
+<h3>Plans</h3>
+
+<ol>
+<li>逐步总结发布Objective-C有关内容；</li>
+<li>查找基于Objective-C的神经网络框架；</li>
+<li>学习Octopress关于修改主题和结构的知识。</li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Github Blog - Markdown基本语法]]></title>
