@@ -101,4 +101,7 @@ google_analytics_tracking_id:
 facebook_like: false
 
 # duoshuo comments
-duoshuo: ture
+duoshuo: true
+
+# share
+share: true
