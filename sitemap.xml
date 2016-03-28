@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://sxgfxm.github.io/blog/2016/03/28/test-category/</loc>
+<lastmod>2016-03-28T17:53:47+08:00</lastmod>
+</url>
+<url>
 <loc>http://sxgfxm.github.io/blog/2016/03/28/hello-github-blog/</loc>
 <lastmod>2016-03-28T11:43:54+08:00</lastmod>
 </url>
@@ -14,9 +18,12 @@
 <loc>http://sxgfxm.github.io/tag-cloud/</loc>
 </url>
 <url>
-<loc>http://sxgfxm.github.io/blog/categories/blog/</loc>
+<loc>http://sxgfxm.github.io/objective-c/</loc>
 </url>
 <url>
-<loc>http://sxgfxm.github.io/tags/blog/</loc>
+<loc>http://sxgfxm.github.io/blog/categories/sui-bi/</loc>
+</url>
+<url>
+<loc>http://sxgfxm.github.io/blog/categories/objective-c/</loc>
 </url>
 </urlset>
