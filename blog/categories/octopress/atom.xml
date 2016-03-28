@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-03-28T19:56:44+08:00</updated>
+  <updated>2016-03-28T20:48:42+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Github Blog - Markdown基本语法]]></title>
+    <link href="http://sxgfxm.github.io/blog/2016/03/28/github-blog-markdownji-ben-yu-fa/"/>
+    <updated>2016-03-28T20:02:52+08:00</updated>
+    <id>http://sxgfxm.github.io/blog/2016/03/28/github-blog-markdownji-ben-yu-fa</id>
+    <content type="html"><![CDATA[<h2>Markdown简介</h2>
+
+<p>Markdown是一种轻量级标语言，创始人为约翰·格鲁伯。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的HTML文档”。参考wiki百科<a href="http://zh.wikipedia.org/wiki/Markdown" title="Markdown">http://zh.wikipedia.org/wiki/Markdown</a></p>
+
+<h2>Markdown基本语法</h2>
+
+<h3>标题</h3>
+
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+</code></pre>
+
+<h1>一级标题</h1>
+
+<h2>二级标题</h2>
+
+<h3>三级标题</h3>
+
+<h4>四级标题</h4>
+
+<h5>五级标题</h5>
+
+<h3>列表</h3>
+
+<p>无序列表</p>
+
+<pre><code>- 文本1
+- 文本2
+- 文本3
+</code></pre>
+
+<p>有序列表</p>
+
+<pre><code>1. 文本1
+2. 文本2
+3. 文本3
+</code></pre>
+
+<p><em>注：<code>-</code>，<code>1.</code>与文本之间需要用一个空格隔开。</em></p>
+
+<h3>链接和图片</h3>
+
+<p>在Markdown中，使用如下语法<code>[显示文本](链接地址)</code>插入链接。</p>
+
+<pre><code>[MyBlog](http://sxgfxm.github.io)
+</code></pre>
+
+<p><a href="http://sxgfxm.github.io">MyBlog</a></p>
+
+<p>在Markdown中，使用如下语法<code>![](图片链接地址)</code>插入图片。</p>
+
+<pre><code>![](http://pic.58pic.com/58pic/17/80/90/5594c1a0ab869_1024.jpg)
+</code></pre>
+
+<p><img src="http://pic.58pic.com/58pic/17/80/90/5594c1a0ab869_1024.jpg" alt="" /></p>
+
+<h3>引用</h3>
+
+<p>引用他人的文字</p>
+
+<pre><code>&gt; 攀登，一步一个脚印，方能知其乐
+</code></pre>
+
+<blockquote><p>攀登，一步一个脚印，方能知其乐</p></blockquote>
+
+<h3>粗体和斜体</h3>
+
+<pre><code>*斜体*
+**粗体**
+***粗斜体***
+</code></pre>
+
+<p><em>斜体</em><br/>
+<strong>粗体</strong><br/>
+<strong><em>粗斜体</em></strong></p>
+
+<h3>换行</h3>
+
+<pre><code>方法一：多个空格加回车
+方法二：&lt;br/&gt;
+</code></pre>
+
+<h3>快捷键</h3>
+
+<pre><code>粗体 ctrl+B
+斜体 ctrl+I
+引用 ctrl+Q
+代码块 ctrl+K
+</code></pre>
+
+<h3>参考资料</h3>
+
+<p><a href="http://www.jianshu.com/p/q81RER#">献给写作者的Markdown新手指南</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Github Blog - 基本操作]]></title>
@@ -33,7 +137,7 @@
 自动生成/public目录下的展示页面。</p>
 
 <p><code>rake preview</code><br>
-本地预览，地址为loccalhost:4000,<code>ctrl+C</code>终止预览。</p>
+本地预览，地址为<a href="http://localhost:4000" title="本地预览">http://localhost:4000</a>，<code>ctrl+C</code>终止预览。</p>
 
 <p><code>rake deploy</code><br></p>
 
