@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Daily Check - 2016-03-29"
+date: 2016-03-29 12:26:03 +0800
+comments: true
+categories: Daily_Check
+tags: 
+keywords: 
+---
+###Achievements
+
+1. 成功添加了侧边栏自我介绍、微博、优秀博客、顶部返回按钮、第三方链接新标签打开、首页博文摘要等自定义设置；
+
+###Plans
+
+1. 添加搜索链接，标题图片；
