@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-03-28T21:16:37+08:00</updated>
+  <updated>2016-03-29T09:32:04+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -46,6 +46,9 @@
     <content type="html"><![CDATA[<h2>Markdown简介</h2>
 
 <p>Markdown是一种轻量级标语言，创始人为约翰·格鲁伯。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的HTML文档”。参考wiki百科<a href="http://zh.wikipedia.org/wiki/Markdown" title="Markdown">http://zh.wikipedia.org/wiki/Markdown</a></p>
+
+<!-- more -->
+
 
 <h2>Markdown基本语法</h2>
 
@@ -138,7 +141,8 @@
 
 <h3>参考资料</h3>
 
-<p><a href="http://www.jianshu.com/p/q81RER#">献给写作者的Markdown新手指南</a></p>
+<p><a href="http://www.jianshu.com/p/q81RER#">献给写作者的Markdown新手指南</a><br/>
+<a href="http://foggry.com/blog/2014/04/28/custom-your-octopress-blog/">自定义你的Octopress博客</a></p>
 ]]></content>
   </entry>
   
