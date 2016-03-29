@@ -119,6 +119,10 @@ Octorpress博客中，默认是在当前界面中打开第三方链接，这导�
 
 *注：本站的链接还是会在当前界面中打开。*
 
+###修改标签栏logo图片
+
+选择喜欢的图片，替换`source`目录下的`favicon.png`即可。
+
 ###参考资料
 [自定义你的Octopress博客](http://foggry.com/blog/2014/04/28/custom-your-octopress-blog/)
 
