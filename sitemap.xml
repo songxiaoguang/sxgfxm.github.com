@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://sxgfxm.github.io/blog/2016/03/29/ios-runloopchu-tan/</loc>
+<lastmod>2016-03-29T19:39:29+08:00</lastmod>
+</url>
+<url>
 <loc>http://sxgfxm.github.io/blog/2016/03/29/daily-check-chart/</loc>
 <lastmod>2016-03-29T12:35:48+08:00</lastmod>
 </url>
@@ -52,6 +56,9 @@
 </url>
 <url>
 <loc>http://sxgfxm.github.io/blog/categories/daily-check/</loc>
+</url>
+<url>
+<loc>http://sxgfxm.github.io/blog/categories/ios/</loc>
 </url>
 <url>
 <loc>http://sxgfxm.github.io/tags/tech/</loc>
