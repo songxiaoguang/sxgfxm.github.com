@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-03-29T10:25:31+08:00</updated>
+  <updated>2016-03-29T11:42:53+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -12,6 +12,135 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Github Blog - 界面自定义]]></title>
+    <link href="http://sxgfxm.github.io/blog/2016/03/29/github-blog-jie-mian-zi-ding-yi/"/>
+    <updated>2016-03-29T10:34:13+08:00</updated>
+    <id>http://sxgfxm.github.io/blog/2016/03/29/github-blog-jie-mian-zi-ding-yi</id>
+    <content type="html"><![CDATA[<h3>添加侧边栏</h3>
+
+<p>首先，在<code>source\_includes\custom\asides\</code>下创建<code>name.html</code>文件，内容遵守如下格式：</p>
+
+<pre><code>&lt;section&gt;
+    &lt;h1&gt;Name&lt;/h1&gt;
+    &lt;ul id="name"&gt;
+    此处填写要插入的内容
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+<p>然后，在<code>_config.yml</code>文件中设置<code>default_asides</code>添加<code>custom\asides\name.html</code>。</p>
+
+<!-- more -->
+
+
+<h3>博客首页显示文章摘要</h3>
+
+<p>默认情况下，博客首页文章列表中都会全部展示，要想让文章在首页中只显示一部分配置如下： <br/>
+首先，在文章中先要展示的缩略部分添加标记：</p>
+
+<pre><code>&lt;!-- more --&gt;
+</code></pre>
+
+<p>然后，在<code>_config.yml</code>文件中设置<code>excerpt_link</code>为<code>"Read on &amp;rarr;"</code></p>
+
+<pre><code>excerpt_link: "Read on &amp;rarr;"
+</code></pre>
+
+<p>即可显示如下文章摘要效果：</p>
+
+<h3>侧边栏增加新浪微博</h3>
+
+<p>首先，要从<a href="http://app.weibo.com/tool/weiboshow">新浪微博秀</a>获取到自定义的微博秀代码，设定好样式后将代码复制，在<code>source/_includes/custom/asides</code>目录下创建<code>weibo.html</code>，并按添加侧边栏格式插入获取的代码。</p>
+
+<p>然后，在<code>default_asides</code>中加入<code>custom/asides/weibo.html</code>。</p>
+
+<h3>添加返回顶部按钮</h3>
+
+<p>首先，创建<code>source/javascripts/top.js</code>，并添加如下代码设置返回按钮事件：</p>
+
+<pre><code>function goTop(acceleration, time)
+{
+    acceleration = acceleration || 0.1;
+    time = time || 16;
+
+    var x1 = 0;
+    var y1 = 0;
+    var x2 = 0;
+    var y2 = 0;
+    var x3 = 0;
+    var y3 = 0;
+
+    if (document.documentElement)
+    {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+    }
+    if (document.body)
+    {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+    }
+    var x3 = window.scrollX || 0;
+    var y3 = window.scrollY || 0;
+
+    var x = Math.max(x1, Math.max(x2, x3));
+    var y = Math.max(y1, Math.max(y2, y3));
+
+    var speed = 1 + acceleration;
+    window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+    if(x &gt; 0 || y &gt; 0)
+    {
+            var invokeFunction = "goTop(" + acceleration + ", " + time + ")";
+            window.setTimeout(invokeFunction, time);
+    }
+}
+</code></pre>
+
+<p>然后，创建<code>source/_includes/custom/totop.html</code>，<br/>
+并添加如下代码设置返回顶部按钮样式和位置：</p>
+
+<pre><code>&lt;!--返回顶部开始--&gt;
+&lt;div id="full" style="width:0px; height:0px; position:fixed; right:180px; bottom:150px; z-index:100; text-align:center; background-color:transparent; cursor:pointer;"&gt;
+    &lt;a href="#" onclick="goTop();return false;"&gt;&lt;img src="http://sxgfxm.github.io/images/top.png" border=0 alt="返回顶部"&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;script src="http://sxgfxm.github.io/javascripts/top.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;!--返回顶部结束--&gt;
+</code></pre>
+
+<p>其中，<code>right</code>和<code>bottom</code>属性用于设置返回图片按钮的位置。</p>
+
+<p>最后，选择自己喜爱的返回按钮图片，命名为<code>top.png</code>后添加到<code>source/images</code>目录中。</p>
+
+<p><strong><em>注：我自己按此方法添加时，没有效果，查看网页源代码发现添加返回按钮的代码并没有加载。所以把<code>totop.html</code>文件中的内容添加到了<code>navigation.html</code>文件中，成功实现了添加返回顶部按钮。</em></strong></p>
+
+<h3>设置在新标签中打开第三方链接</h3>
+
+<p>Octorpress博客中，默认是在当前界面中打开第三方链接，这导致网站浏览者跳到第三方链接后很难回来。<br/>
+将以下代码加入<code>source/_includes/custom/head.html</code>文件中：</p>
+
+<pre><code>&lt;script type="text/javascript"&gt;
+function addBlankTargetForLinks () {
+$('a[href^="http"]').each(function(){
+    $(this).attr('target', '_blank');
+});
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+addBlankTargetForLinks();
+});
+&lt;/script&gt;
+</code></pre>
+
+<p><em>注：本站的链接还是会在当前界面中打开。</em></p>
+
+<h3>参考资料</h3>
+
+<p><a href="http://foggry.com/blog/2014/04/28/custom-your-octopress-blog/">自定义你的Octopress博客</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Daily Check - 2016-03-28]]></title>

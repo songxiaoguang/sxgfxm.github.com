@@ -29,7 +29,17 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+<script type="text/javascript">
+function addBlankTargetForLinks () {
+	$('a[href^="http"]').each(function(){
+		$(this).attr('target', '_blank');
+	});
+}
+ 
+$(document).bind('DOMNodeInserted', function(event) {
+	addBlankTargetForLinks();
+});
+ </script>
   
 
 </head>
@@ -106,7 +116,8 @@
   
     <section>
   <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <p>Hello. I'm Light.</p>
+  <p>iOS Development Engineer</p>
 </section>
 <section>
     <h1>Sina Weibo</h1>
@@ -118,6 +129,10 @@
 </section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/03/29/github-blog-jie-mian-zi-ding-yi/">Github Blog - 界面自定义</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2016/03/28/daily-check-2016-03-08/">Daily Check - 2016-03-28</a>
@@ -135,10 +150,6 @@
         <a href="/blog/2016/03/28/github-blog-da-jian/">Github Blog - 搭建</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2016/03/28/hello-github-blog/">Hello Github Blog</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -150,10 +161,15 @@
   <ul id="categories">  
     <li class='category'><a href='/blog/categories/daily-check/'>daily_check (1)</a></li>
 <li class='category'><a href='/blog/categories/free-style/'>free_style (1)</a></li>
-<li class='category'><a href='/blog/categories/octopress/'>octopress (3)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (4)</a></li>
   
   </ul>  
-</section>    
+</section>  <section>
+    <h1>他山之石</h1>
+    <ul id="famous_blog">
+	<a href = "http://southpeak.github.io/">南峰子的技术博客</a>
+    </ul>
+</section>  
 <section>  
 <h1>Visitor</h1>  
 <div>  
