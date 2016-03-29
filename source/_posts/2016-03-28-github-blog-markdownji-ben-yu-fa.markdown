@@ -11,6 +11,7 @@ keywords: Octopress,markdown
 ##Markdown简介
 Markdown是一种轻量级标语言，创始人为约翰·格鲁伯。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的HTML文档”。参考wiki百科[http://zh.wikipedia.org/wiki/Markdown](http://zh.wikipedia.org/wiki/Markdown "Markdown")
 
+<!-- more -->
 ##Markdown基本语法
 
 ###标题
@@ -83,4 +84,4 @@ Markdown是一种轻量级标语言，创始人为约翰·格鲁伯。它允许�
 
 ###参考资料
 [献给写作者的Markdown新手指南](http://www.jianshu.com/p/q81RER#)  
-	
+[自定义你的Octopress博客](http://foggry.com/blog/2014/04/28/custom-your-octopress-blog/)	

@@ -3,7 +3,7 @@ layout: post
 title: "Daily Check - 2016-03-28"
 date: 2016-03-28 20:53:31 +0800
 comments: true
-categories: Daily Check
+categories: Daily_Check
 tags: 
 keywords: 
 ---
