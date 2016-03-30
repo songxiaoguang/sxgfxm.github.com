@@ -35,6 +35,8 @@ keywords: Octorpress,自定义，返回按钮
 
 即可显示如下文章摘要效果：
 
+![](http://i.imgur.com/bUg73nQ.png)
+
 ###侧边栏增加新浪微博
 
 首先，要从[新浪微博秀](http://app.weibo.com/tool/weiboshow)获取到自定义的微博秀代码，设定好样式后将代码复制，在`source/_includes/custom/asides`目录下创建`weibo.html`，并按添加侧边栏格式插入获取的代码。  
