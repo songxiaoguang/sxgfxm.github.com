@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-03-30T23:55:53+08:00</updated>
+  <updated>2016-03-31T13:30:07+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -303,9 +303,298 @@ iOS不支持垃圾回收机制。</li>
 <hr />
 
 <ul>
-<li><h2>强引用与弱引用</h2></li>
+<li><p>强引用与弱引用<br/>
+  我们已经知道OC中的内存管理是通过“引用计数”来实现的。一个对象的生命周期取决于它是否被其他对象引用（是否retainCount == 0）。但当出现强引用循环时，将造成对象无法释放。</p>
+
+<ul>
+<li>强引用：当前对象被其他对象引用时，会执行retain操作，retainCount++。当retainCount == 0时，该对象才会被销毁。强引用持有该对象，需要负责该对象的内存管理，这是默认的引用方式。</li>
+<li>弱引用：不改变引用计数，为解决强引用循环而引入。弱引用不持有该对象，不需要负责对该对象的内存管理，当弱引用指向的对象被释放时，自动置为nil。</li>
 </ul>
 
+
+<p>  定义属性时，若声明为retain类型，则为强引用；若声明为assign类型的，则为弱引用。在ARC模式下，强引用声明为strong；弱引用声明为weak。
+  retain和strong一致；assign和weak基本一致，同为弱引用，但weak为“归零弱引用”，即当对象被销毁后，会自动把它的指针置为nil，这样可以防止野指针错误。而assign不会自动置为nil，造成了野指针。 <br/>
+  总结：由于要进行内存管理，OC里的引用默认都是强引用；为了解决“强引用循环”造成的内存泄露，引入了弱引用。 <br/>
+  参考<a href="http://www.tuicool.com/articles/NVNrMv7">关于iOS的强引用、弱引用</a></p></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>深拷贝和浅拷贝
+
+<ul>
+<li>深拷贝（mutableCopy）：内容拷贝，拷贝出相同大小的内存空间，内容一致；</li>
+<li>浅拷贝（copy）：指针拷贝，指针指向同一块内存空间。</li>
+<li>遵守NSCopying协议的类可以发送copy消息；</li>
+<li>遵守NSMutableCopying协议的类可以发送mutableCopy消息。</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>retain和copy
+
+<ul>
+<li>copy属性会创建一个新对象，新对象的retainCount为1。copy减少对象对上下文的依赖；</li>
+<li>retain属性会创建一个指针指向该对象，对象的retainCount加1.</li>
+<li>retain表示两个对象的地址相同，属于指针拷贝；</li>
+<li>copy会开辟新的内存空间，属于内容拷贝。</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>KVC与KVO
+
+<ul>
+<li>KVC，键值编码，是一种通过KeyPath间接访问对象属性的途径，多数情况下用于简化代码；</li>
+<li>KVC的执行时要解析KeyPath字符串，执行效率低于accessor方法；</li>
+<li>KVO，简直观察机制，可以监控对象的属性变化，简化代码；</li>
+<li>KVC是KVO的基础。</li>
+<li>KVO的使用过程：
+
+<ul>
+<li>注册观察者，<code>addObserver:forKeyPath:options:context:</code></li>
+<li>接收变更通知，<code>observeValueForKeyPathOfObject:change:context:</code></li>
+<li>移除观察者，<code>removeObserver:forKeyPath:</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>NSNotificationCenter
+
+<ul>
+<li>通知中心，用于实现较大跨度的界面通信，可以为无引用关系的对象进行通信，使用了观察者模式；</li>
+<li>注册通知， <code>[[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(mytest:) name:@" mytest" object:nil];</code></li>
+<li>发送通知，<code>[[NSNotificationCenter defaultCenter] postNotificationName:@"mytest"　object:searchFriendArray];</code></li>
+<li>响应代理方法</li>
+<li>移除通知，<code>[[NSNotificationCenter defaultCenter] removeObserver:self name:@"mytest" object:nil];</code></li>
+<li><p>键盘弹起收起通知</p>
+
+<pre><code>  //键盘升起   
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];  
+  //键盘降下  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Block
+
+<ul>
+<li>block是一个代码块，block名为指向这个代码块的指针，通过block名调用代码块。</li>
+<li>作用：
+
+<ul>
+<li>对一个对象的集合的操作（<code>sortedArrayUsingComparator:</code>）</li>
+<li>在完成操作时回调，把操作的结果传回，可直接访问局部变量</li>
+</ul>
+</li>
+<li>默认block里面引用一个OC对象时，该对象会被retain。</li>
+<li>__block修饰的对象变量不会被retain；</li>
+<li>__block修饰的block外的变量，变传值为传址，可以在block内修改；</li>
+<li>为防止内部循环引用，使用__weak修饰；</li>
+<li>根据isa指针，block一共有三种类型：
+
+<ul>
+<li>GlobalBlock，全局静态</li>
+<li>StackBlock，保存在栈中，出函数作用域销毁，系统自动管理</li>
+<li>MallocBlcok，保存在堆中，程序员手动管理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>几种传值方式比较
+
+<ul>
+<li>代理需要对象间有引用关系，通常一对一；通知中心耦合度更加松散，属于一对多的广播；</li>
+<li>代理逻辑更加清晰，容易理解；block代码简洁，使用方便；</li>
+<li>单例有时可用来共享信息；</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li><h2>数据持久化方式：</h2></li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>多线程编程
+
+<ul>
+<li>使用场景：当需要执行某些耗时操作如网络请求、图片加载、下载文件等操作时，开启异步线程执行，避免界面卡死；</li>
+<li>NSThread，轻量级线程，需要控制线程的创建、开启、取消等操作。通常使用<code>[NSThread sleepForTimeInterval:]</code>使线程休眠；</li>
+<li>NSOperation及NSOperationqueue，任务和队列，创建任务，加入队列，开始执行；</li>
+<li>GCD，grand central dispatch，充分利用多核处理器的并行特性的C方法，无需关心线程创建、调度和销毁等，常用语创建单例，异步执行等。</li>
+<li>多线程编程需要注意<strong>线程安全</strong>；</li>
+<li>刷新UI需要回到主线程</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>Runtime
+
+<ul>
+<li>Runtime，运行时系统，Objective-C的动态语言特性需要Runtime来支持，可以在程序运行时动态创建、检查、修改类、对象及方法；</li>
+<li>动态创建类：
+
+<ul>
+<li>分配空间<code>objc_allocateClassPair</code></li>
+<li>添加成员变量<code>class_addIvar</code></li>
+<li>添加属性<code>class_addProperty</code></li>
+<li>添加方法<code>class_addMethod</code></li>
+<li>注册类<code>objc_registerClassPair</code></li>
+</ul>
+</li>
+<li>动态添加变量：无法向已经存在的类中添加变量</li>
+<li>动态添加方法：
+
+<ul>
+<li>添加方法<code>class_addMethod(Class,SEL,IMP,String)</code></li>
+<li>方法实现<code>void(id self, SEL _cmd)</code></li>
+</ul>
+</li>
+<li>动态替换方法的实现：
+
+<ul>
+<li>获取方法<code>class_getInstanceMethod</code></li>
+<li>交换方法<code>method_exchangeImplementation</code></li>
+</ul>
+</li>
+<li>动态创建对象：
+
+<ul>
+<li>创建对象<code>class_createInstance</code></li>
+</ul>
+</li>
+<li>动态获取实例变量的值
+
+<ul>
+<li>获取实例变量<code>object_getIvar</code></li>
+</ul>
+</li>
+<li>动态修改实例变量的值
+
+<ul>
+<li>获取变量列表<code>class_copyIvarList</code></li>
+<li>遍历列表获取变量<code>ivar_getName</code></li>
+<li>修改对应变量<code>object_setIvar</code></li>
+</ul>
+</li>
+<li>为类别添加属性：
+
+<ul>
+<li>声明名称<code>char cName</code></li>
+<li>实现setter方法<code>objc_setAssociatedObject</code></li>
+<li>实现getter方法<code>objc_getAssociatedObejct</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>RunLoop
+
+<ul>
+<li>RunLoop的关键作用：
+
+<ul>
+<li>保持线程事件、消息处理能力，直到线程退出；</li>
+<li>当无事件、消息处理时，休眠以降低开销；当有消息时，及时响应。</li>
+</ul>
+</li>
+<li>线程和RunLoop是<strong>一一对应</strong>的，其关系保存在一个全局的Dictionary里；</li>
+<li>线程创建时并没有RunLoop（符合一般情况下线程的状态），只有当调用<code>CFRunLoopGetMain()</code>或<code>CFRunLoopGetCurrent()</code>主动获取，且只在第一次获取时创建RunLoop，并加入全局Dictionary里；</li>
+<li>初始化全局Dictionary时，会为主线程创建一个RunLoop。即主线程默认开启RunLoop（符合App启动后可以保持事件处理能力）；</li>
+<li>当线程结束时，会销毁该线程的RunLoop；</li>
+<li>RunLoop的结构：
+
+<ul>
+<li>一个<strong>RunLoop</strong>包含若干个<strong>Mode</strong>；</li>
+<li>每个Mode又包含若干个<strong>Source/Timer/Observer</strong>；</li>
+<li>每次调用RunLoop的主函数时，只能指定其中一个Mode，这个Mode被称作<strong>CurrentMode</strong>；</li>
+<li>如果需要切换Mode，只能退出Loop，再重新指定一个Mode进入；</li>
+<li><strong>CFRunLoopSourceRef</strong>是事件产生的地方：
+
+<ul>
+<li><strong>Source0</strong>，只包含一个回调指针；</li>
+<li><strong>Source1</strong>，包含一个<strong>mach_port</strong>和一个回调指针；</li>
+</ul>
+</li>
+<li><strong>CFRunLoopTimerRef</strong>是基于时间的触发器；</li>
+<li><strong>CFRunLoopObserveRef</strong>是观察者；</li>
+</ul>
+</li>
+<li>Mode的结构：
+
+<ul>
+<li><strong>CommonModes</strong></li>
+<li><strong>CommonModeItems</strong></li>
+<li><strong>CurrentMode</strong></li>
+<li><strong>Modes</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
+
+<ul>
+<li>浅谈设计模式
+
+<ul>
+<li>代理模式：当一个类的某些功能需要其他类来实现时采用，如生产者和经销商，界面传值等；</li>
+<li>单例模式：一个类只有一个实例变量，用于资源共享控制；</li>
+<li>策略模式：定义算法族，封装起来，使其可相互替换，如数组排序；</li>
+<li>观察者模式：负责监听并发布消息，如通知中心；</li>
+<li>工厂模式：工厂方式创建类的实例，多与代理模式配合。</li>
+</ul>
+</li>
+</ul>
+
+
+<hr />
 ]]></content>
   </entry>
   
