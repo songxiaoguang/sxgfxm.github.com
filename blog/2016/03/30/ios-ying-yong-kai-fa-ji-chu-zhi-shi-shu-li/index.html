@@ -517,7 +517,32 @@ iOS不支持垃圾回收机制。</li>
 <hr />
 
 <ul>
-<li><h2>数据持久化方式：</h2></li>
+<li>数据持久化方式：
+
+<ul>
+<li>属性列表：只有NSString、NSArray、NSDictionary和NSData可<code>writeToFile</code>，储存到plist文件；</li>
+<li>对象归档：将对象序列化为二进制流
+
+<ul>
+<li>归档，<code>NSKeyedArchiver</code></li>
+<li>解档，<code>NSKeyedUnArchiver</code></li>
+<li>自定义对象需要遵守NSCoding协议，并实现归档和解档方法<code>encodeWithCoder:</code>和<code>initWithCoder:</code></li>
+</ul>
+</li>
+<li>NSUserDefault</li>
+<li>沙盒：iOS引用程序独立的存储空间，保存较大的数据
+
+<ul>
+<li>Documents：保存数据，iTunes会备份此目录；</li>
+<li>Library/Preference：存储程序的默认设置；</li>
+<li>Library/Caches：存放缓存文件，iTunes不会备份此目录；</li>
+<li>tmp：临时文件保存目录，程序退出时会清空</li>
+</ul>
+</li>
+<li>SQLite数据库：轻量级的数据库</li>
+<li>CoreData：通过管理对象进行增删改查操作。它不是一个数据库。</li>
+</ul>
+</li>
 </ul>
 
 
