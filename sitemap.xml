@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://sxgfxm.github.io/blog/2016/04/04/swift-ai-readme/</loc>
+<lastmod>2016-04-04T15:36:11+08:00</lastmod>
+</url>
+<url>
 <loc>http://sxgfxm.github.io/blog/2016/03/30/daily-check-2016-03-30/</loc>
 <lastmod>2016-03-30T23:52:16+08:00</lastmod>
 </url>
@@ -71,6 +75,9 @@
 </url>
 <url>
 <loc>http://sxgfxm.github.io/blog/categories/ios/</loc>
+</url>
+<url>
+<loc>http://sxgfxm.github.io/blog/categories/ji-qi-xue-xi/</loc>
 </url>
 <url>
 <loc>http://sxgfxm.github.io/tags/tech/</loc>
