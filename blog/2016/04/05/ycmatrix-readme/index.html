@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Github Blog - 基本操作 - Light's Blog</title>
+  <title>YCMatrix - README - Light's Blog</title>
   <meta name="author" content="Light">
 
   
-  <meta name="description" content="创建新博文 rake new_post["article_name"]
-会在octopress/source/_post/目录生成.markdown文件，可使用markdownpad2编辑。 删除博文 只需删除对应的markdown文件即可。 更新博客 rake generate
-自动生成/ &hellip;">
-  <meta name="keywords" content="Octopress">
+  <meta name="description" content="一个适用于Objective-C和Swift的灵活的矩阵库。 支持OS X(10.7+)he iOS(8.0+) Getting started Adding the framework to your project 把库导入你的工程 Importing 使用@include YCMatirx或 &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sxgfxm.github.io/blog/2016/03/28/github-blog-ji-ben-cao-zuo/">
+  <link rel="canonical" href="http://sxgfxm.github.io/blog/2016/04/05/ycmatrix-readme/">
   <link href="/images/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Light's Blog" type="application/atom+xml">
@@ -86,7 +84,7 @@ $(document).bind('DOMNodeInserted', function(event) {
   
   <header>
     
-      <h1 class="entry-title">Github Blog - 基本操作</h1>
+      <h1 class="entry-title">YCMatrix - README</h1>
     
     
       <p class="meta">
@@ -95,37 +93,65 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 
 
-<time class='entry-date' datetime='2016-03-28T19:43:53+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>7:43 pm</span></time>
+<time class='entry-date' datetime='2016-04-05T12:40:17+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:40 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>创建新博文</h3>
+<div class="entry-content"><p>一个适用于Objective-C和Swift的灵活的矩阵库。</p>
 
-<p><code>rake new_post["article_name"]</code><br>
-会在octopress/source/_post/目录生成.markdown文件，可使用markdownpad2编辑。</p>
+<p>支持OS X(10.7+)he iOS(8.0+)</p>
 
-<h3>删除博文</h3>
+<h2>Getting started</h2>
 
-<p>只需删除对应的markdown文件即可。</p>
+<h3>Adding the framework to your project</h3>
 
-<h3>更新博客</h3>
+<p>把库导入你的工程</p>
 
-<p><code>rake generate</code><br>
-自动生成/public目录下的展示页面。</p>
+<h3>Importing</h3>
 
-<p><code>rake preview</code><br>
-本地预览，地址为<a href="http://localhost:4000" title="本地预览">http://localhost:4000</a>，<code>ctrl+C</code>终止预览。</p>
+<p>使用<code>@include YCMatirx</code>或<code>#import YCMatirx/YCMatirx.h</code></p>
 
-<p><code>rake deploy</code><br></p>
+<h3>Dependencies</h3>
 
-<h3>push到github</h3>
+<p>无需关联其他系统框架</p>
 
-<p><code>git add .</code><br>
-<code>git commit -m "message"</code><br>
-<code>git push origin source</code></p>
+<h2>Usage</h2>
+
+<h3>Naming Conventions</h3>
+
+<p>产生矩阵的方法以“matrixFrom”为前缀。</p>
+
+<h3>Example</h3>
+
+<p>矩阵加法为例：</p>
+
+<pre><code>@include YCMatrix;
+
+Matrix *I = [Matrix identifyOfRows:3 columns:3];
+Matrix *C = [Matrix matrixOfRows:3 columes:3 value:2];
+Matirx *S = [I matrixByAddition:C];
+NSLog:(@"result :%@",S);
+
+// result:
+// 3.0 2.0 2.0
+// 2.0 3.0 2.0
+// 2.0 2.0 3.0
+</code></pre>
+
+<h3>What&rsquo;s in thers?</h3>
+
+<p>这个库中的文件可以分为4类：</p>
+
+<ul>
+<li>Matrix.h：YCMatrix类定义和基础操作</li>
+<li>Matrix+Advanced.h：LAPACK函数</li>
+<li>Matrix+Manipulate.h：操作行列的函数</li>
+<li>Matrix+Map.h：线性矩阵映射</li>
+</ul>
+
 </div>
 
 
@@ -141,12 +167,12 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 
 
-<time class='entry-date' datetime='2016-03-28T19:43:53+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>7:43 pm</span></time>
+<time class='entry-date' datetime='2016-04-05T12:40:17+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:40 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/ji-qi-xue-xi/'>机器学习</a>
   
 </span>
 
@@ -177,10 +203,8 @@ $(document).bind('DOMNodeInserted', function(event) {
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2016/03/28/github-blog-da-jian/" title="Previous Post: Github Blog - 搭建">&laquo; Github Blog - 搭建</a>
+        <a class="basic-alignment left" href="/blog/2016/04/05/ycml-readme/" title="Previous Post: YCML - README">&laquo; YCML - README</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2016/03/28/github-blog-markdownji-ben-yu-fa/" title="Next Post: Github Blog - markdown基本语法">Github Blog - markdown基本语法 &raquo;</a>
       
     </p>
   </footer>

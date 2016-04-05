@@ -4,7 +4,7 @@
   <title><![CDATA[Category: 机器学习 | Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/blog/categories/ji-qi-xue-xi/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-04-04T16:44:27+08:00</updated>
+  <updated>2016-04-05T12:58:15+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -12,6 +12,249 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[YCMatrix - README]]></title>
+    <link href="http://sxgfxm.github.io/blog/2016/04/05/ycmatrix-readme/"/>
+    <updated>2016-04-05T12:40:17+08:00</updated>
+    <id>http://sxgfxm.github.io/blog/2016/04/05/ycmatrix-readme</id>
+    <content type="html"><![CDATA[<p>一个适用于Objective-C和Swift的灵活的矩阵库。</p>
+
+<p>支持OS X(10.7+)he iOS(8.0+)</p>
+
+<h2>Getting started</h2>
+
+<h3>Adding the framework to your project</h3>
+
+<p>把库导入你的工程</p>
+
+<h3>Importing</h3>
+
+<p>使用<code>@include YCMatirx</code>或<code>#import YCMatirx/YCMatirx.h</code></p>
+
+<h3>Dependencies</h3>
+
+<p>无需关联其他系统框架</p>
+
+<h2>Usage</h2>
+
+<h3>Naming Conventions</h3>
+
+<p>产生矩阵的方法以“matrixFrom”为前缀。</p>
+
+<h3>Example</h3>
+
+<p>矩阵加法为例：</p>
+
+<pre><code>@include YCMatrix;
+
+Matrix *I = [Matrix identifyOfRows:3 columns:3];
+Matrix *C = [Matrix matrixOfRows:3 columes:3 value:2];
+Matirx *S = [I matrixByAddition:C];
+NSLog:(@"result :%@",S);
+
+// result:
+// 3.0 2.0 2.0
+// 2.0 3.0 2.0
+// 2.0 2.0 3.0
+</code></pre>
+
+<h3>What&rsquo;s in thers?</h3>
+
+<p>这个库中的文件可以分为4类：</p>
+
+<ul>
+<li>Matrix.h：YCMatrix类定义和基础操作</li>
+<li>Matrix+Advanced.h：LAPACK函数</li>
+<li>Matrix+Manipulate.h：操作行列的函数</li>
+<li>Matrix+Map.h：线性矩阵映射</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[YCML - README]]></title>
+    <link href="http://sxgfxm.github.io/blog/2016/04/05/ycml-readme/"/>
+    <updated>2016-04-05T10:22:14+08:00</updated>
+    <id>http://sxgfxm.github.io/blog/2016/04/05/ycml-readme</id>
+    <content type="html"><![CDATA[<p>YCML是用Objective-C语言开发的人工智能、机器学习和最优化框架。YCML既可以在Objective-C中使用也可以在Swift中使用。YCML支持Mac OS X和iOS平台。</p>
+
+<p>YCML目的是为Objective-C/Swift带来高效的算法，用最优的实现。实现这些算法的相关论文在文章的结尾列出。</p>
+
+<p>YCML包含超过30个高级的测试单元，适合广泛的需要。</p>
+
+<h3>At a glance</h3>
+
+<ul>
+<li>七种有关监督学习的机器学习算法的实现</li>
+<li>两种多对象遗传算法的变体</li>
+</ul>
+
+
+<h3>Introduction</h3>
+
+<p>YCML可以用来解决机器学习和计算最优化问题。</p>
+
+<h3>Machine Learning</h3>
+
+<p>机器学习领域是用来研究如何使计算机通过经验，而不是通过具体编程来学习某些技能。机器学习算法使计算机可以通过样例学会某项技能，并且把这项技能推广到未知的样例中。</p>
+
+<p>YCML主要关注回归问题，回归问题是一个经典的问题，目标从一个可以精确预测一个数字的模型中得到，建立在已知的一个或多个输入变量之上。以下是现实中的常见问题：</p>
+
+<ul>
+<li>股市预测</li>
+<li>地产价格预测</li>
+<li>机器人和控制</li>
+<li>机械和材料性能预测</li>
+<li>冗长和复杂实验的结果近似和模拟</li>
+<li>在线广告预测</li>
+<li>医疗诊断自动化</li>
+</ul>
+
+
+<p>除了回归问题，YCML也可以处理分类问题，通过改变输入和输出数据。</p>
+
+<h3>Muti-Objective Optimization</h3>
+
+<p>YCML提供了一些处理最优化问题的算法。具体来说，集中在多目标问题。</p>
+
+<p>多目标问题是一个经典的问题，超过一个目标存在，并且每个目标是相互冲突的。这意味着提高一个目标的性能，至少另一个目标的性能会降低。这种特性导致无法找到最佳的解决办法。然而，我们通常来找最佳的权衡，一个最佳的权衡是没有其他的性能比总体上这个更好。在多目标最优化问题中，还有叫做不受控的解决方案。</p>
+
+<p>YCML实现了多目标进化算法。多目标进化算法是一种随机最优化算法采用流行的解决方法。它们可以高效的搜索出最优化解决方案。</p>
+
+<h2>Features</h2>
+
+<h3>Learning</h3>
+
+<p>目前支持一下算法：</p>
+
+<ul>
+<li>梯度下降的反向传播</li>
+<li>弹性反向传播</li>
+<li>使用SMO支持向量机回归</li>
+<li>极限学习机</li>
+<li>采用正交最小二乘向前选择</li>
+<li>采用正交最小二乘与媒体统计向前选择</li>
+<li>二进制受限玻尔兹曼机</li>
+</ul>
+
+
+<h3>Learning fetures</h3>
+
+<ul>
+<li>嵌入式模型的输入/输出标准化设施</li>
+<li>通用监督学习基类，可以容纳多种算法</li>
+<li>模块化backprop类，支持复杂图形，基于layer对象</li>
+<li>强大的datarame类，拥有多种函数，可以与Matrix相互转化</li>
+</ul>
+
+
+<h3>Optimization</h3>
+
+<ul>
+<li>为单个或者多个对象问题进行单独优化</li>
+<li>用于优化的代理类</li>
+</ul>
+
+
+<h3>Other</h3>
+
+<ul>
+<li>基于 YCMatrix，一个矩阵库，使用加速框架来提升性能</li>
+<li>使用 NSArray 类进行基础统计</li>
+</ul>
+
+
+<h2>Getting started</h2>
+
+<h3>Setting up</h3>
+
+<p>导入工程文件。YCML依赖YCMatrix。0.2.0版本后YCML包含YCMatrix，一般情况下只需要YCML即可。</p>
+
+<p>YCML定义了一个模块。在你的代码开头导入：</p>
+
+<pre><code>@import YCML;
+</code></pre>
+
+<p>另外，导入YCMatirx用于矩阵计算：</p>
+
+<pre><code>@import YCMatrix;
+</code></pre>
+
+<h3>Your first predictive model</h3>
+
+<p>下面是一个简单的训练样例，返回一个训练好的模型，通过输入和输出数据集：</p>
+
+<pre><code>YCFFN *theModel = [[YCRpropTrainer trainer] train:nil input:trainingInput output:trainingOutput];
+</code></pre>
+
+<p>YCML模型和训练可能使用YCMatrix来替代数据集。在这种情况下，YCML模型接受矩阵且矩阵的每一列为一组训练样本。下面是通过矩阵训练：</p>
+
+<pre><code>YCFFN *theModel = [[YCRpropTrainer trainer] train:nil inputMatrix:trainingInput outputMatrix:trainingOutput];
+</code></pre>
+
+<p>训练好的模型可以用来做预测，通过数据数据集或矩阵：</p>
+
+<pre><code>YCDataframe *prediction = [theModel predict:testInput];
+</code></pre>
+
+<h3>Woring with YCML Dataframes</h3>
+
+<p>使用YCDatarame类，可以很容易的准备数据。增加YCDataframe的实例，调用<code>addSampleWithData:</code>方法，传递一个包含数据的字典为参数。如果字典中的参数不在dataframe中，会被自动创建。下面展示了如何创建一个新的datarame并且添加记录：</p>
+
+<pre><code>YCDataframe *frame = [YCDataframe dataframe];
+[frame addSampleWithData:@{@"x1":@1.0,@"x2":@2.0,@"x3":@-5.0}];
+[frame addSampleWithData:@{@"x1":@5.5,@"x2":@-3.0,@"x3":@-1.5}];
+</code></pre>
+
+<p>通过两个dataframe，一个input一个output，你可以很容易的训练一个预测模型。</p>
+
+<h3>Further Help</h3>
+
+<p>查看YCML documentation</p>
+
+<h2>Examples</h2>
+
+<h3>Training and activation(oc,using matirces)</h3>
+
+<pre><code>YCMatrix *trainingData = [self matrixWithCSVName:@"housing" removeFirst:YES];
+YCMatrix *trainingOutput = [trainingData getRow:13];
+YCMatirx *trainingInput = [trainingData removeRow:13];
+YCELMtrainer *trainer = [YCELMTrainer trainer];
+
+YCFFN *model = (YCFFN *)[trainer train:nil inputMatrix:trainingInput outputMatrix:trainingOutput];
+
+YCMatrix *predictedOutput = [model activateWithMatrix:trainingInput];
+</code></pre>
+
+<h2>Framework Architecture</h2>
+
+<h2>References</h2>
+
+<p>[1] D. Rumelhart, G. Hinton and R. Williams. Learning Internal Representations by Error Propagation, Parallel Distrib. Process. Explor. Microstruct. Cogn. Vol. 1, Cambridge, MA, USA: MIT Press; pp. 318–362, 1985.</p>
+
+<p>[2] M. Riedmiller, H. Braun. A direct adaptive method for faster backpropagation learning: the RPROP algorithm. IEEE Int. Conf. Neural Networks; pp. 586-591, 1993.</p>
+
+<p>[3] JC. Platt. Fast Training of Support Vector Machines Using Sequential Minimal Optimization. Adv Kernel Methods pp. 185-208, 1998</p>
+
+<p>[4] GW. Flake, S. Lawrence. Efficient SVM regression training with SMO. Mach Learn 46; pp.271–90, 2002.</p>
+
+<p>[5] G.-B. Huang, H. Zhou, X. Ding, and R. Zhang. Extreme Learning Machine for Regression and Multiclass Classification, IEEE Transactions on Systems, Man, and Cybernetics - Part B:Cybernetics, vol. 42, no. 2, pp. 513-529, 2012.</p>
+
+<p>[6] S. Chen, CN Cowan, PM Grant. Orthogonal least squares learning algorithm for radial basis function networks. IEEE Trans Neural Netw, vol. 2, no. 2, pp. 302–9, 1991.</p>
+
+<p>[7] S. Chen, E. Chng, K. Alkadhimi. Regularized orthogonal least squares algorithm for constructing radial basis function networks. Int J Control 1996.</p>
+
+<p>[8] X. Hong, P. Sharkey, K. Warwick. Automatic nonlinear predictive model-construction algorithm using forward regression and the PRESS statistic. IEEE Proc - Control Theory Appl. vol. 150, no. 3, pp. 245–54, 2003</p>
+
+<p>[9] G. Hinton. Training Products of Experts by Minimizing Contrastive Divergence. Neural Comput. vol. 14, no. 8, pp.1771–800, 2002.</p>
+
+<p>[10] K. Deb, A. Pratap, S. Agarwal, T. Meyarivan. A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Trans Evol Comput. vol. 6, pp. 182–97, 2002.</p>
+
+<p>[11] J. Bader, E. Zitzler. HypE: An algorithm for fast hypervolume-based many-objective optimization. Evol Comput 19, pp. 45–76, 2011.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Swift AI - README]]></title>
@@ -103,7 +346,7 @@
 
 <h3>Contact</h3>
 
-<p>邮箱地址：<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#99;&#111;&#108;&#108;&#x69;&#x6e;&#104;&#x75;&#110;&#100;&#x6c;&#x65;&#121;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#99;&#111;&#x6c;&#x6c;&#x69;&#110;&#104;&#117;&#x6e;&#x64;&#x6c;&#101;&#121;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>邮箱地址：<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x63;&#x6f;&#x6c;&#x6c;&#105;&#x6e;&#x68;&#x75;&#x6e;&#100;&#108;&#101;&#121;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#99;&#111;&#x6c;&#x6c;&#x69;&#x6e;&#x68;&#117;&#110;&#100;&#x6c;&#101;&#121;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a></p>
 ]]></content>
   </entry>
   

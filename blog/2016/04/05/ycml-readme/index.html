@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>YCML - README - Light's Blog</title>
+  <meta name="author" content="Light">
+
+  
+  <meta name="description" content="YCML是用Objective-C语言开发的人工智能、机器学习和最优化框架。YCML既可以在Objective-C中使用也可以在Swift中使用。YCML支持Mac OS X和iOS平台。 YCML目的是为Objective-C/Swift带来高效的算法，用最优的实现。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://sxgfxm.github.io/blog/2016/04/05/ycml-readme/">
+  <link href="/images/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Light's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<meta name="baidu-site-verification" content="axxA0rUWDG" />
+<script type="text/javascript">
+function addBlankTargetForLinks () {
+	$('a[href^="http"]').each(function(){
+		$(this).attr('target', '_blank');
+	});
+}
+ 
+$(document).bind('DOMNodeInserted', function(event) {
+	addBlankTargetForLinks();
+});
+ </script>
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Light's Blog</a></h1>
+  
+    <h2>The best or nothing.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="sxgfxm.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+<!--返回顶部开始-->
+<div id="full" style="width:0px; height:0px; position:fixed; right:120px; bottom:150px; z-index:100; text-align:center; background-color:transparent; cursor:pointer;">
+        <a href="#" onclick="goTop();return false;"><img src="/images/top.png" border=0 alt="返回顶部"></a>
+</div>
+<script src="/javascripts/top.js" type="text/javascript"></script>
+<!--返回顶部结束-->
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">YCML - README</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-04-05T10:22:14+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:22 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>YCML是用Objective-C语言开发的人工智能、机器学习和最优化框架。YCML既可以在Objective-C中使用也可以在Swift中使用。YCML支持Mac OS X和iOS平台。</p>
+
+<p>YCML目的是为Objective-C/Swift带来高效的算法，用最优的实现。实现这些算法的相关论文在文章的结尾列出。</p>
+
+<p>YCML包含超过30个高级的测试单元，适合广泛的需要。</p>
+
+<h3>At a glance</h3>
+
+<ul>
+<li>七种有关监督学习的机器学习算法的实现</li>
+<li>两种多对象遗传算法的变体</li>
+</ul>
+
+
+<h3>Introduction</h3>
+
+<p>YCML可以用来解决机器学习和计算最优化问题。</p>
+
+<h3>Machine Learning</h3>
+
+<p>机器学习领域是用来研究如何使计算机通过经验，而不是通过具体编程来学习某些技能。机器学习算法使计算机可以通过样例学会某项技能，并且把这项技能推广到未知的样例中。</p>
+
+<p>YCML主要关注回归问题，回归问题是一个经典的问题，目标从一个可以精确预测一个数字的模型中得到，建立在已知的一个或多个输入变量之上。以下是现实中的常见问题：</p>
+
+<ul>
+<li>股市预测</li>
+<li>地产价格预测</li>
+<li>机器人和控制</li>
+<li>机械和材料性能预测</li>
+<li>冗长和复杂实验的结果近似和模拟</li>
+<li>在线广告预测</li>
+<li>医疗诊断自动化</li>
+</ul>
+
+
+<p>除了回归问题，YCML也可以处理分类问题，通过改变输入和输出数据。</p>
+
+<h3>Muti-Objective Optimization</h3>
+
+<p>YCML提供了一些处理最优化问题的算法。具体来说，集中在多目标问题。</p>
+
+<p>多目标问题是一个经典的问题，超过一个目标存在，并且每个目标是相互冲突的。这意味着提高一个目标的性能，至少另一个目标的性能会降低。这种特性导致无法找到最佳的解决办法。然而，我们通常来找最佳的权衡，一个最佳的权衡是没有其他的性能比总体上这个更好。在多目标最优化问题中，还有叫做不受控的解决方案。</p>
+
+<p>YCML实现了多目标进化算法。多目标进化算法是一种随机最优化算法采用流行的解决方法。它们可以高效的搜索出最优化解决方案。</p>
+
+<h2>Features</h2>
+
+<h3>Learning</h3>
+
+<p>目前支持一下算法：</p>
+
+<ul>
+<li>梯度下降的反向传播</li>
+<li>弹性反向传播</li>
+<li>使用SMO支持向量机回归</li>
+<li>极限学习机</li>
+<li>采用正交最小二乘向前选择</li>
+<li>采用正交最小二乘与媒体统计向前选择</li>
+<li>二进制受限玻尔兹曼机</li>
+</ul>
+
+
+<h3>Learning fetures</h3>
+
+<ul>
+<li>嵌入式模型的输入/输出标准化设施</li>
+<li>通用监督学习基类，可以容纳多种算法</li>
+<li>模块化backprop类，支持复杂图形，基于layer对象</li>
+<li>强大的datarame类，拥有多种函数，可以与Matrix相互转化</li>
+</ul>
+
+
+<h3>Optimization</h3>
+
+<ul>
+<li>为单个或者多个对象问题进行单独优化</li>
+<li>用于优化的代理类</li>
+</ul>
+
+
+<h3>Other</h3>
+
+<ul>
+<li>基于 YCMatrix，一个矩阵库，使用加速框架来提升性能</li>
+<li>使用 NSArray 类进行基础统计</li>
+</ul>
+
+
+<h2>Getting started</h2>
+
+<h3>Setting up</h3>
+
+<p>导入工程文件。YCML依赖YCMatrix。0.2.0版本后YCML包含YCMatrix，一般情况下只需要YCML即可。</p>
+
+<p>YCML定义了一个模块。在你的代码开头导入：</p>
+
+<pre><code>@import YCML;
+</code></pre>
+
+<p>另外，导入YCMatirx用于矩阵计算：</p>
+
+<pre><code>@import YCMatrix;
+</code></pre>
+
+<h3>Your first predictive model</h3>
+
+<p>下面是一个简单的训练样例，返回一个训练好的模型，通过输入和输出数据集：</p>
+
+<pre><code>YCFFN *theModel = [[YCRpropTrainer trainer] train:nil input:trainingInput output:trainingOutput];
+</code></pre>
+
+<p>YCML模型和训练可能使用YCMatrix来替代数据集。在这种情况下，YCML模型接受矩阵且矩阵的每一列为一组训练样本。下面是通过矩阵训练：</p>
+
+<pre><code>YCFFN *theModel = [[YCRpropTrainer trainer] train:nil inputMatrix:trainingInput outputMatrix:trainingOutput];
+</code></pre>
+
+<p>训练好的模型可以用来做预测，通过数据数据集或矩阵：</p>
+
+<pre><code>YCDataframe *prediction = [theModel predict:testInput];
+</code></pre>
+
+<h3>Woring with YCML Dataframes</h3>
+
+<p>使用YCDatarame类，可以很容易的准备数据。增加YCDataframe的实例，调用<code>addSampleWithData:</code>方法，传递一个包含数据的字典为参数。如果字典中的参数不在dataframe中，会被自动创建。下面展示了如何创建一个新的datarame并且添加记录：</p>
+
+<pre><code>YCDataframe *frame = [YCDataframe dataframe];
+[frame addSampleWithData:@{@"x1":@1.0,@"x2":@2.0,@"x3":@-5.0}];
+[frame addSampleWithData:@{@"x1":@5.5,@"x2":@-3.0,@"x3":@-1.5}];
+</code></pre>
+
+<p>通过两个dataframe，一个input一个output，你可以很容易的训练一个预测模型。</p>
+
+<h3>Further Help</h3>
+
+<p>查看YCML documentation</p>
+
+<h2>Examples</h2>
+
+<h3>Training and activation(oc,using matirces)</h3>
+
+<pre><code>YCMatrix *trainingData = [self matrixWithCSVName:@"housing" removeFirst:YES];
+YCMatrix *trainingOutput = [trainingData getRow:13];
+YCMatirx *trainingInput = [trainingData removeRow:13];
+YCELMtrainer *trainer = [YCELMTrainer trainer];
+
+YCFFN *model = (YCFFN *)[trainer train:nil inputMatrix:trainingInput outputMatrix:trainingOutput];
+
+YCMatrix *predictedOutput = [model activateWithMatrix:trainingInput];
+</code></pre>
+
+<h2>Framework Architecture</h2>
+
+<h2>References</h2>
+
+<p>[1] D. Rumelhart, G. Hinton and R. Williams. Learning Internal Representations by Error Propagation, Parallel Distrib. Process. Explor. Microstruct. Cogn. Vol. 1, Cambridge, MA, USA: MIT Press; pp. 318–362, 1985.</p>
+
+<p>[2] M. Riedmiller, H. Braun. A direct adaptive method for faster backpropagation learning: the RPROP algorithm. IEEE Int. Conf. Neural Networks; pp. 586-591, 1993.</p>
+
+<p>[3] JC. Platt. Fast Training of Support Vector Machines Using Sequential Minimal Optimization. Adv Kernel Methods pp. 185-208, 1998</p>
+
+<p>[4] GW. Flake, S. Lawrence. Efficient SVM regression training with SMO. Mach Learn 46; pp.271–90, 2002.</p>
+
+<p>[5] G.-B. Huang, H. Zhou, X. Ding, and R. Zhang. Extreme Learning Machine for Regression and Multiclass Classification, IEEE Transactions on Systems, Man, and Cybernetics - Part B:Cybernetics, vol. 42, no. 2, pp. 513-529, 2012.</p>
+
+<p>[6] S. Chen, CN Cowan, PM Grant. Orthogonal least squares learning algorithm for radial basis function networks. IEEE Trans Neural Netw, vol. 2, no. 2, pp. 302–9, 1991.</p>
+
+<p>[7] S. Chen, E. Chng, K. Alkadhimi. Regularized orthogonal least squares algorithm for constructing radial basis function networks. Int J Control 1996.</p>
+
+<p>[8] X. Hong, P. Sharkey, K. Warwick. Automatic nonlinear predictive model-construction algorithm using forward regression and the PRESS statistic. IEEE Proc - Control Theory Appl. vol. 150, no. 3, pp. 245–54, 2003</p>
+
+<p>[9] G. Hinton. Training Products of Experts by Minimizing Contrastive Divergence. Neural Comput. vol. 14, no. 8, pp.1771–800, 2002.</p>
+
+<p>[10] K. Deb, A. Pratap, S. Agarwal, T. Meyarivan. A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Trans Evol Comput. vol. 6, pp. 182–97, 2002.</p>
+
+<p>[11] J. Bader, E. Zitzler. HypE: An algorithm for fast hypervolume-based many-objective optimization. Evol Comput 19, pp. 45–76, 2011.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Light</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2016-04-05T10:22:14+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:22 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ji-qi-xue-xi/'>机器学习</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+    
+  <h2>Share</h2>  
+      <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+	<a class="jiathis_button_qzone"></a>
+	<a class="jiathis_button_tsina"></a>
+	<a class="jiathis_button_tqq"></a>
+	<a class="jiathis_button_weixin"></a>
+	<a class="jiathis_button_renren"></a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->  
+   
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2016/04/04/swift-ai-readme/" title="Previous Post: Swift AI - README">&laquo; Swift AI - README</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2016/04/05/ycmatrix-readme/" title="Next Post: YCMatrix - README">YCMatrix - README &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+
+  
+  <section>  
+    <h1>Comments</h1>  
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+	<div class="ds-thread" ></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sxgfxm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</div>  
+  </section>  
+  
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Hello. I'm Light.</p>
+  <p>iOS Development Engineer</p>
+</section>
+<section>
+    <h1>Sina Weibo</h1>
+    <ul id="weibo">
+	<li>
+	<iframe width="100%" height="130" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=130&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=3087432847&verifier=14cc6033&dpc=1"></iframe>
+	</li>
+    </ul>
+</section><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/04/05/ycmatrix-readme/">YCMatrix - README</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/04/05/ycml-readme/">YCML - README</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/04/04/swift-ai-readme/">Swift AI - README</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/03/30/daily-check-2016-03-30/">Daily Check - 2016-03-30</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/03/30/ios-ying-yong-kai-fa-ji-chu-zhi-shi-shu-li/">iOS - 应用开发基础知识梳理</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+<section>  
+  <h1>Categories</h1>  
+  <ul id="categories">  
+    <li class='category'><a href='/blog/categories/daily-check/'>daily_check (3)</a></li>
+<li class='category'><a href='/blog/categories/free-style/'>free_style (3)</a></li>
+<li class='category'><a href='/blog/categories/ios/'>ios (2)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>octopress (4)</a></li>
+<li class='category'><a href='/blog/categories/机器学习/'>机器学习 (3)</a></li>
+  
+  </ul>  
+</section>  <section>
+    <h1>他山之石</h1>
+    <ul id="famous_blog">
+	<li><a href = "http://southpeak.github.io/">南峰子的技术博客</a></li>
+	<li><a href = "http://www.cocoachina.com/">CocoaChina</a></li>
+	<li><a href = "http://www.code4app.com/">Code4App</a></li>
+	<li><a href = "https://github.com/">GitHub</a></li>
+	<li><a href = "http://stackoverflow.com/">StackOverflow</a></li>
+    </ul>
+</section><section>
+    <h1>Wonderful Source</h1>
+    <ul id="famous_source">
+	<a href = "http://www.cocoachina.com/ios/20160323/15770.html">iOS面试必看，最全梳理</a>
+    </ul>
+</section>  
+<section>  
+<h1>Visitor</h1>  
+<div>  
+    <p></p>  
+    <center>  
+    <a href="http://s11.flagcounter.com/more/QiC"><img src="http://s11.flagcounter.com/count2/QiC/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+	</center>  
+</div>  
+</section>  
+ 
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Light -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
