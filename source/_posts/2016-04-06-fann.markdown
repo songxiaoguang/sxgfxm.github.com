@@ -1,0 +1,115 @@
+---
+layout: post
+title: "FANN"
+date: 2016-04-06 11:34:27 +0800
+comments: true
+categories: 机器学习
+tags: 
+keywords: FANN,ANN
+---
+
+FANN，Fast Artificial Neural Network Library，快速人工神经网络库。   
+
+官网地址：http://leenissen.dk/fann/wp/
+
+###Training
+
+	#include "fann.h"
+
+	int main()
+	{
+		// 参数设置
+
+		// 输入层神经元个数
+    	const unsigned int num_input = 2;
+		// 输出层神经元个数
+    	const unsigned int num_output = 1;
+		// 神经网络总层数
+    	const unsigned int num_layers = 3;
+		// 隐含层神经元个数
+    	const unsigned int num_neurons_hidden = 3;
+		// 期望误差
+    	const float desired_error = (const float) 0.001;
+		// 最大迭代次数
+    	const unsigned int max_epochs = 500000;
+		// 设置迭代过程中输出间隔
+		const unsigned int epochs_between_reports = 1000;
+		
+		// 创建神经网络
+
+		// 按照设置的参数创建一个全连接的神经网络
+    	struct fann *ann = fann_create_standard(num_layers, num_input,
+        num_neurons_hidden, num_output);
+
+		// 设置神经网络学习算法
+		fann_set_training_algorithm(ann,FANN_TRAIN_RPROP);
+				
+		// 设置激活函数
+
+		// 设置隐含层的激活函数
+    	fann_set_activation_function_hidden(ann, FANN_SIGMOID_SYMMETRIC);
+		// 设置输出层的激活函数
+    	fann_set_activation_function_output(ann, FANN_SIGMOID_SYMMETRIC);
+
+		// 训练神经网络
+
+		// 从文件中读入数据，训练神经网络
+    	fann_train_on_file(ann, "xor.data", max_epochs,
+        epochs_between_reports, desired_error);
+
+		// 保存训练好的神经网络
+    	fann_save(ann, "xor_float.net");
+
+		// 销毁神经网络
+    	fann_destroy(ann);
+
+    	return 0;
+	}
+
+###The file xor.data, used to train the xor function
+	
+	4 2 1
+	-1 -1
+	-1
+	-1 1
+	1
+	1 -1
+	1
+	1 1
+	-1
+
+###Excution
+
+	#include <stdio.h>
+	#include "floatfann.h"
+
+	int main()
+	{
+
+    	fann_type *calc_out;
+    	fann_type input[2];
+
+		// 从文件中读取训练好的神经网络
+    	struct fann *ann = fann_create_from_file("xor_float.net");
+
+		// 设置输入数据
+    	input[0] = -1;
+    	input[1] = 1;
+
+		// 测试输入数据
+    	calc_out = fann_run(ann, input);
+
+		// 输出测试结果
+    	printf("xor test (%f,%f) -> %f\n", input[0], input[1], calc_out[0]);
+
+		// 销毁神经网络
+    	fann_destroy(ann);
+
+    	return 0;
+	}
+
+*注1：开发时需要导入src目录下的.h和.c文件，且fann.c、floatfann.c、doublefann.c不可同时存在，否则会报重定义错误。*
+
+*注2：Mac环境下文件读写路径与Windows环境下不同。*
+
+*注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(http://www.cnblogs.com/winshton/p/4882093.html)*
