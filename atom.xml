@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-04-06T13:22:24+08:00</updated>
+  <updated>2016-04-06T14:20:00+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -128,6 +128,22 @@ int main()
 <p><em>注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(<a href="http://www.cnblogs.com/winshton/p/4882093.html">http://www.cnblogs.com/winshton/p/4882093.html</a>)</em></p>
 
 <p><em>注4：FANN论文原文(<a href="https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&amp;download=">https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&amp;download=</a>) 翻译(<a href="http://blog.csdn.net/fengshuiyue/article/details/41446257">http://blog.csdn.net/fengshuiyue/article/details/41446257</a>)</em></p>
+
+<h3>加法训练结果</h3>
+
+<p><img src="http://i.imgur.com/sgqUekz.png" alt="" /></p>
+
+<p>1000组“归一化”输入数据，线性激活函数，期望误差0.000001，实际运行迭代次数50次。</p>
+
+<p><img src="http://i.imgur.com/DEjnRHd.png" alt="" /></p>
+
+<p>1000组“归一化”输入数据，S型激活函数，期望误差0.000001，实际运行迭代次数50000次。</p>
+
+<p><img src="http://i.imgur.com/hQtSNkL.png" alt="" /></p>
+
+<p>1000组“归一化”输入数据，S型激活函数，期望误差0.000001，实际运行迭代次数50000次。</p>
+
+<p>从上述实验结果可知，对于同样的训练数据，激活函数的不同将会显著影响训练结果。对于加法训练，采用线性激活函数的效果最佳。</p>
 ]]></content>
   </entry>
   
@@ -464,7 +480,7 @@ YCMatrix *predictedOutput = [model activateWithMatrix:trainingInput];
 
 <h3>Contact</h3>
 
-<p>邮箱地址：<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#99;&#111;&#x6c;&#108;&#105;&#110;&#104;&#x75;&#110;&#100;&#x6c;&#x65;&#121;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x63;&#x6f;&#x6c;&#108;&#x69;&#110;&#x68;&#117;&#110;&#x64;&#x6c;&#101;&#121;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>邮箱地址：<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#99;&#x6f;&#108;&#108;&#x69;&#110;&#x68;&#117;&#110;&#x64;&#x6c;&#101;&#x79;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#99;&#111;&#108;&#108;&#105;&#110;&#x68;&#x75;&#110;&#x64;&#108;&#x65;&#x79;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#109;</a></p>
 ]]></content>
   </entry>
   
