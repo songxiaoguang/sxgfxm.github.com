@@ -113,3 +113,5 @@ FANN，Fast Artificial Neural Network Library，快速人工神经网络库。
 *注2：Mac环境下文件读写路径与Windows环境下不同。*
 
 *注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(http://www.cnblogs.com/winshton/p/4882093.html)*
+
+*注4：FANN论文原文(https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&download=) 翻译(http://blog.csdn.net/fengshuiyue/article/details/41446257)*
