@@ -115,3 +115,20 @@ FANN，Fast Artificial Neural Network Library，快速人工神经网络库。
 *注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(http://www.cnblogs.com/winshton/p/4882093.html)*
 
 *注4：FANN论文原文(https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&download=) 翻译(http://blog.csdn.net/fengshuiyue/article/details/41446257)*
+
+###加法训练结果
+
+![](http://i.imgur.com/sgqUekz.png)
+
+1000组“归一化”输入数据，线性激活函数，期望误差0.000001，实际运行迭代次数50次。
+
+![](http://i.imgur.com/DEjnRHd.png)
+
+1000组“归一化”输入数据，S型激活函数，期望误差0.000001，实际运行迭代次数50000次。
+
+![](http://i.imgur.com/hQtSNkL.png)
+
+1000组“归一化”输入数据，S型激活函数，期望误差0.000001，实际运行迭代次数50000次。
+
+从上述实验结果可知，对于同样的训练数据，激活函数的不同将会显著影响训练结果。  
+对于加法训练，采用线性激活函数的效果最佳。
