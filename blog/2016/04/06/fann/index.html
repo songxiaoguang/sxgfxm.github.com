@@ -5,15 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Daily Check - 2016-03-28 - Light's Blog</title>
+  <title>FANN - Light's Blog</title>
   <meta name="author" content="Light">
 
   
-  <meta name="description" content="Achievements 成功搭建Github Blog；
-完成了Octopress关于基本操作的总结；
-学习了Markdown标记语言的基本语法。 Plans 逐步总结发布Objective-C有关内容；
-查找基于Objective-C的神经网络框架； &hellip;">
-  
+  <meta name="description" content="FANN，Fast Artificial Neural Network Library，快速人工神经网络库。 官网地址：http://leenissen.dk/fann/wp/ Training #include "fann.h" int main()
+{ // 参数设置 // 输入层神经元个数 &hellip;">
+  <meta name="keywords" content="FANN,ANN">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -21,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://sxgfxm.github.io/blog/2016/03/28/daily-check-2016-03-08/">
+  <link rel="canonical" href="http://sxgfxm.github.io/blog/2016/04/06/fann/">
   <link href="/images/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Light's Blog" type="application/atom+xml">
@@ -87,7 +85,7 @@ $(document).bind('DOMNodeInserted', function(event) {
   
   <header>
     
-      <h1 class="entry-title">Daily Check - 2016-03-28</h1>
+      <h1 class="entry-title">FANN</h1>
     
     
       <p class="meta">
@@ -96,30 +94,121 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 
 
-<time class='entry-date' datetime='2016-03-28T20:53:31+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>8:53 pm</span></time>
+<time class='entry-date' datetime='2016-04-06T11:34:27+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:34 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><h3>Achievements</h3>
+<div class="entry-content"><p>FANN，Fast Artificial Neural Network Library，快速人工神经网络库。</p>
 
-<ol>
-<li>成功搭建Github Blog；</li>
-<li>完成了Octopress关于基本操作的总结；</li>
-<li>学习了Markdown标记语言的基本语法。</li>
-</ol>
+<p>官网地址：<a href="http://leenissen.dk/fann/wp/">http://leenissen.dk/fann/wp/</a></p>
 
+<h3>Training</h3>
 
-<h3>Plans</h3>
+<pre><code>#include "fann.h"
 
-<ol>
-<li>逐步总结发布Objective-C有关内容；</li>
-<li>查找基于Objective-C的神经网络框架；</li>
-<li>学习Octopress关于修改主题和结构的知识。</li>
-</ol>
+int main()
+{
+    // 参数设置
 
+    // 输入层神经元个数
+    const unsigned int num_input = 2;
+    // 输出层神经元个数
+    const unsigned int num_output = 1;
+    // 神经网络总层数
+    const unsigned int num_layers = 3;
+    // 隐含层神经元个数
+    const unsigned int num_neurons_hidden = 3;
+    // 期望误差
+    const float desired_error = (const float) 0.001;
+    // 最大迭代次数
+    const unsigned int max_epochs = 500000;
+    // 设置迭代过程中输出间隔
+    const unsigned int epochs_between_reports = 1000;
+
+    // 创建神经网络
+
+    // 按照设置的参数创建一个全连接的神经网络
+    struct fann *ann = fann_create_standard(num_layers, num_input,
+    num_neurons_hidden, num_output);
+
+    // 设置神经网络学习算法
+    fann_set_training_algorithm(ann,FANN_TRAIN_RPROP);
+
+    // 设置激活函数
+
+    // 设置隐含层的激活函数
+    fann_set_activation_function_hidden(ann, FANN_SIGMOID_SYMMETRIC);
+    // 设置输出层的激活函数
+    fann_set_activation_function_output(ann, FANN_SIGMOID_SYMMETRIC);
+
+    // 训练神经网络
+
+    // 从文件中读入数据，训练神经网络
+    fann_train_on_file(ann, "xor.data", max_epochs,
+    epochs_between_reports, desired_error);
+
+    // 保存训练好的神经网络
+    fann_save(ann, "xor_float.net");
+
+    // 销毁神经网络
+    fann_destroy(ann);
+
+    return 0;
+}
+</code></pre>
+
+<h3>The file xor.data, used to train the xor function</h3>
+
+<pre><code>4 2 1
+-1 -1
+-1
+-1 1
+1
+1 -1
+1
+1 1
+-1
+</code></pre>
+
+<h3>Excution</h3>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include "floatfann.h"
+
+int main()
+{
+
+    fann_type *calc_out;
+    fann_type input[2];
+
+    // 从文件中读取训练好的神经网络
+    struct fann *ann = fann_create_from_file("xor_float.net");
+
+    // 设置输入数据
+    input[0] = -1;
+    input[1] = 1;
+
+    // 测试输入数据
+    calc_out = fann_run(ann, input);
+
+    // 输出测试结果
+    printf("xor test (%f,%f) -&gt; %f\n", input[0], input[1], calc_out[0]);
+
+    // 销毁神经网络
+    fann_destroy(ann);
+
+    return 0;
+}
+</code></pre>
+
+<p><em>注1：开发时需要导入src目录下的.h和.c文件，且fann.c、floatfann.c、doublefann.c不可同时存在，否则会报重定义错误。</em></p>
+
+<p><em>注2：Mac环境下文件读写路径与Windows环境下不同。</em></p>
+
+<p><em>注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(<a href="http://www.cnblogs.com/winshton/p/4882093.html">http://www.cnblogs.com/winshton/p/4882093.html</a>)</em></p>
 </div>
 
 
@@ -135,12 +224,12 @@ $(document).bind('DOMNodeInserted', function(event) {
 
 
 
-<time class='entry-date' datetime='2016-03-28T20:53:31+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>8:53 pm</span></time>
+<time class='entry-date' datetime='2016-04-06T11:34:27+08:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>11:34 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/daily-check/'>daily_check</a>
+    <a class='category' href='/blog/categories/ji-qi-xue-xi/'>机器学习</a>
   
 </span>
 
@@ -171,10 +260,8 @@ $(document).bind('DOMNodeInserted', function(event) {
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2016/03/28/github-blog-markdownji-ben-yu-fa/" title="Previous Post: Github Blog - markdown基本语法">&laquo; Github Blog - markdown基本语法</a>
+        <a class="basic-alignment left" href="/blog/2016/04/05/ycmatrix-readme/" title="Previous Post: YCMatrix - README">&laquo; YCMatrix - README</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2016/03/29/github-blog-jie-mian-zi-ding-yi/" title="Next Post: Github Blog - 界面自定义">Github Blog - 界面自定义 &raquo;</a>
       
     </p>
   </footer>
