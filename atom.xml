@@ -4,7 +4,7 @@
   <title><![CDATA[Light's Blog]]></title>
   <link href="http://sxgfxm.github.io/atom.xml" rel="self"/>
   <link href="http://sxgfxm.github.io/"/>
-  <updated>2016-04-06T13:06:03+08:00</updated>
+  <updated>2016-04-06T13:22:24+08:00</updated>
   <id>http://sxgfxm.github.io/</id>
   <author>
     <name><![CDATA[Light]]></name>
@@ -126,6 +126,8 @@ int main()
 <p><em>注2：Mac环境下文件读写路径与Windows环境下不同。</em></p>
 
 <p><em>注3：Windows环境下运行会报dilimport错误，对此不熟悉所以转在Mac上运行。Windows环境下运行参考该解决方案(<a href="http://www.cnblogs.com/winshton/p/4882093.html">http://www.cnblogs.com/winshton/p/4882093.html</a>)</em></p>
+
+<p><em>注4：FANN论文原文(<a href="https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&amp;download=">https://sourceforge.net/projects/fann/files/fann_doc/1.0/fann_doc_complete_1.0.pdf/download?use_mirror=freefr&amp;download=</a>) 翻译(<a href="http://blog.csdn.net/fengshuiyue/article/details/41446257">http://blog.csdn.net/fengshuiyue/article/details/41446257</a>)</em></p>
 ]]></content>
   </entry>
   
@@ -462,7 +464,7 @@ YCMatrix *predictedOutput = [model activateWithMatrix:trainingInput];
 
 <h3>Contact</h3>
 
-<p>邮箱地址：<a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#99;&#111;&#108;&#108;&#x69;&#x6e;&#104;&#x75;&#x6e;&#x64;&#x6c;&#x65;&#x79;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x63;&#111;&#108;&#x6c;&#105;&#x6e;&#x68;&#117;&#x6e;&#100;&#x6c;&#101;&#x79;&#64;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a></p>
+<p>邮箱地址：<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#x3a;&#99;&#111;&#x6c;&#108;&#105;&#110;&#104;&#x75;&#110;&#100;&#x6c;&#x65;&#121;&#64;&#103;&#x6d;&#97;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x63;&#x6f;&#x6c;&#108;&#x69;&#110;&#x68;&#117;&#110;&#x64;&#x6c;&#101;&#121;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></p>
 ]]></content>
   </entry>
   
